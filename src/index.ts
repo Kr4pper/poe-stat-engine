@@ -14,10 +14,16 @@ const unityDev = new Item('xdd', [
 const klaus = new Character('Klaus');
 klaus.equipItem(quinton);
 klaus.equipItem(quinton);
-//klaus.equipItem(unityDev);
-//klaus.unequipItem(quinton);
-klaus.dumpStats();
 klaus.dumpInventory();
-console.log(klaus.getStat(damageFlags.Poison));
+klaus.dumpStats();
+console.log('poison', klaus.getStat(damageFlags.Poison));
+console.log('chaos dot', klaus.getStat(damageFlags.Chaos | damageFlags.Dot));
 klaus.unequipItem(quinton);
-console.log(klaus.getStat(damageFlags.Chaos | damageFlags.Dot));
+/*
+console.log('poison', klaus.getStat(damageFlags.Poison));
+console.log('chaos dot', klaus.getStat(damageFlags.Chaos | damageFlags.Dot));
+klaus.equipItem(unityDev);
+console.log('poison', klaus.getStat(damageFlags.Poison));
+console.log('chaos dot', klaus.getStat(damageFlags.Chaos | damageFlags.Dot));
+klaus.dumpStats();
+*/

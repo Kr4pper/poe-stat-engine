@@ -57,13 +57,6 @@ export class Character {
         console.log(`${this.name} inventory:\n${[...this.equippedItems.values()].map(item => `> ${item.toString()}`).join('\n')}`);
     }
 
-    private dmgFilter(flags: DamageFlags) {
-        return this.modifierStream.pipe(
-            filter(modifier => (modifier.type & flags) === modifier.type),
-            scan((acc, modifier) => acc + modifier.value, 0),
-        );
-    }
-
     private logFilter(flags: DamageFlags, description: string, logEvents: boolean) {
         const sub = new BehaviorSubject(0);
         this.modifierStream.pipe(
